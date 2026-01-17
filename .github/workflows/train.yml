@@ -3,7 +3,7 @@ name: Train Neural Network (Simulation)
 permissions:
   pull-requests: write
   contents: read
-  
+
 on:
   pull_request:
   push:
