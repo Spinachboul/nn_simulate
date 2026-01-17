@@ -5,8 +5,11 @@ permissions:
   contents: read
 
 on:
-  pull_request:
   push:
+    paths:
+      - model.yaml
+
+  pull_request_target:
     paths:
       - model.yaml
 
