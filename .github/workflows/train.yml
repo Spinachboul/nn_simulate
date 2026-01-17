@@ -1,15 +1,10 @@
 name: Train Neural Network (Simulation)
 
-permissions:
-  pull-requests: write
-  contents: read
-
 on:
   push:
     paths:
       - model.yaml
-
-  pull_request_target:
+  pull_request:
     paths:
       - model.yaml
 
@@ -28,11 +23,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run simulation
-        run: python simulate.py | tee output.txt
+        run: python simulate.py
 
-      - name: Comment on PR
-        if: github.event_name == 'pull_request'
-        uses: marocchino/sticky-pull-request-comment@v2
+      - name: Upload report
+        uses: actions/upload-artifact@v3
         with:
-          recreate: true
-          path: output.txt
+          name: training-report
+          path: reports/latest.md
