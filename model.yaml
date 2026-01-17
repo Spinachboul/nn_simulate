@@ -1,0 +1,5 @@
+task: binary_classification
+activation: relu
+loss: mse
+normalization: none
+depth: deep
