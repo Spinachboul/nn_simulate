@@ -1,3 +1,5 @@
+![Training Status](https://github.com/Spinachbou/nn_simulate/actions/workflows/train.yml/badge.svg)
+
 
 # Neural Network Intuition Simulator
 
